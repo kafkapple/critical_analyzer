@@ -1,0 +1,2 @@
+# The Challenge of Prompt Engineering
+This paper discusses the difficulties and nuances of effective prompt engineering. It argues that while powerful, LLMs are highly sensitive to input phrasing. The document concludes that developing a systematic approach to prompt design is crucial for reliable AI performance.

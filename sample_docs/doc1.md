@@ -1,0 +1,2 @@
+# Research on LLM Caching
+This document explores various techniques for caching LLM responses to improve latency and reduce cost. The primary method discussed is semantic caching, which stores and retrieves results based on the meaning of the query rather than its exact string representation.

@@ -1,0 +1,3 @@
+# configs/prompt/default_analysis.yaml
+individual_summary_prompt: "prompts/individual_summary.txt"
+comprehensive_analysis_prompt: "prompts/comprehensive_analysis.txt"

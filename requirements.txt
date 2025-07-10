@@ -1,0 +1,9 @@
+hydra-core
+omegaconf
+litellm
+python-dotenv
+openai
+anthropic
+google-generativeai
+cohere
+tqdm

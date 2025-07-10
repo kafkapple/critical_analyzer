@@ -1,0 +1,5 @@
+# configs/llm/openai_4o_mini.yaml
+model_name: "gpt-4o-mini"
+temperature: 0.7
+max_tokens: 16000
+

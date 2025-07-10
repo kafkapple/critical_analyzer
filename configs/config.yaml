@@ -1,0 +1,18 @@
+defaults:
+  - llm: gemini_pro
+  - prompt: default_analysis
+  - _self_
+
+input_dir: "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research" # "/home/joon/dev" # 분석할 옵시디언 폴더 경로를 지정하세요.
+output_file: "comprehensive_report.md"
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    config:
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys:
+          - hydra
