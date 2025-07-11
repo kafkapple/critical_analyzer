@@ -1,11 +1,12 @@
 defaults:
-  - llm: gemini_pro
+  - llm: perplexity_sonar #gemini_flash #openai_4o #gemini_pro #perplexity_sonar
   - prompt: default_analysis
   - _self_
 
-input_dir: "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research" # "/home/joon/dev" # 분석할 옵시디언 폴더 경로를 지정하세요.
+input_dir: "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research/250709_input" #"/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research/250709_input" # "/home/joon/dev" # 분석할 옵시디언 폴더 경로를 지정하세요.
+base_output_dir: "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research/250711_v3" #"outputs" # 모든 결과 파일이 저장될 기본 출력 디렉토리
+summaries_sub_dir: "summaries" # 개별 요약 파일이 저장될 하위 디렉토리
 output_file: "comprehensive_report.md"
-
 hydra:
   run:
     dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

@@ -1,0 +1,5 @@
+# configs/llm/perplexity_sonar_large.yaml
+model_name: "perplexity/sonar-reasoning" #sonar-reasoning
+temperature: 0.3
+max_tokens: 16000
+

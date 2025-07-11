@@ -6,6 +6,7 @@ from tqdm import tqdm
 from file_handler import FileHandler
 from llm_adapter import LLMAdapter
 import logging
+from datetime import datetime
 
 def get_full_path(path: str) -> str:
     """Helper to get absolute path from hydra's original cwd."""
@@ -21,14 +22,26 @@ def main(cfg: DictConfig) -> None:
     
     # --- 1. Setup ---
     input_dir = get_full_path(cfg.input_dir)
+    # Use the absolute path for the base output directory
+    summaries_base_dir = cfg.base_output_dir
+    os.makedirs(summaries_base_dir, exist_ok=True)
+
+    individual_summaries_dir = os.path.join(summaries_base_dir, cfg.summaries_sub_dir)
+    os.makedirs(individual_summaries_dir, exist_ok=True)
+
     # Hydra's output directory is the current working directory
     output_dir = os.getcwd()
-    final_report_path = os.path.join(output_dir, cfg.output_file)
-
-    # Create a dedicated 'outputs/summaries' directory at the project root
-    summaries_base_dir = get_full_path("outputs")
-    individual_summaries_dir = os.path.join(summaries_base_dir, "summaries")
-    os.makedirs(individual_summaries_dir, exist_ok=True)
+    # Determine the final report path, adding a number if the file already exists
+    today_str = datetime.now().strftime("%y%m%d")
+    llm_name = cfg.llm.model_name.replace('/', '_')
+    prompt_name = os.path.splitext(os.path.basename(cfg.prompt.comprehensive_analysis_prompt))[0]
+    
+    base_report_filename = f"{today_str}_{llm_name}_{prompt_name}"
+    report_counter = 1
+    final_report_path = os.path.join(summaries_base_dir, f"{base_report_filename}_{report_counter}.md")
+    while os.path.exists(final_report_path):
+        report_counter += 1
+        final_report_path = os.path.join(summaries_base_dir, f"{base_report_filename}_{report_counter}.md")
 
     # Load prompts
     individual_prompt_template = open(get_full_path(cfg.prompt.individual_summary_prompt), 'r', encoding='utf-8').read()
@@ -52,25 +65,41 @@ def main(cfg: DictConfig) -> None:
 
     # --- 3. Generate and Save Individual Summaries ---
     summary_file_paths = []
-    print("\n--- Generating Individual Summaries ---")
-    for doc in tqdm(documents, desc="Summarizing documents"):
-        tqdm.write(f"\nProcessing: {doc['filename']}")
-        
-        prompt = individual_prompt_template.format(document_content=doc['content'])
-        summary_content = llm_adapter.generate(prompt)
-        
-        # Print a snippet of the summary
-        summary_snippet = summary_content.strip().replace('\n', ' ')[0:200]
-        tqdm.write(f"  └ Summary Snippet: {summary_snippet}...")
+    documents_to_summarize = []
 
-        # Save the individual summary to a file
-        summary_filename = f"{os.path.splitext(doc['filename'])[0]}_summary.md"
+    print("\n--- Checking for Existing Summaries ---")
+    for doc in documents:
+        base_filename = os.path.basename(doc['filename'])
+        summary_filename = f"{os.path.splitext(base_filename)[0]}_summary.md"
         summary_filepath = os.path.join(individual_summaries_dir, summary_filename)
-        
-        with open(summary_filepath, 'w', encoding='utf-8') as f:
-            f.write(summary_content)
-        
-        summary_file_paths.append(summary_filepath)
+
+        if os.path.exists(summary_filepath):
+            print(f"  └ Existing summary found for {doc['filename']}. Reusing it.")
+            summary_file_paths.append(summary_filepath)
+        else:
+            documents_to_summarize.append(doc)
+
+    if documents_to_summarize:
+        print("\n--- Generating New Individual Summaries ---")
+        for doc in tqdm(documents_to_summarize, desc="Summarizing new documents"):
+            tqdm.write(f"\nProcessing: {doc['filename']}")
+            
+            base_filename = os.path.basename(doc['filename'])
+            summary_filename = f"{os.path.splitext(base_filename)[0]}_summary.md"
+            summary_filepath = os.path.join(individual_summaries_dir, summary_filename)
+
+            prompt = individual_prompt_template.format(document_content=doc['content'])
+            summary_content = llm_adapter.generate(prompt)
+            
+            with open(summary_filepath, 'w', encoding='utf-8') as f:
+                f.write(summary_content)
+            
+            summary_snippet = summary_content.strip().replace('\n', ' ')[0:200]
+            tqdm.write(f"  └ Summary Snippet: {summary_snippet}...")
+
+            summary_file_paths.append(summary_filepath)
+    else:
+        print("\n--- No new documents to summarize. ---")
 
     # --- 4. Generate Comprehensive Analysis from Summaries ---
     print("\n--- Generating Comprehensive Analysis Report ---")

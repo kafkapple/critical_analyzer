@@ -1,5 +1,0 @@
-# configs/llm/perplexity_sonar_large.yaml
-model_name: "perplexity/llama-3-sonar-large-32k-online"
-temperature: 0.7
-max_tokens: 16000
-
