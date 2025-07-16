@@ -1,0 +1,7 @@
+analysis_mode: "integration"
+input_dirs:
+  - "/home/joon/dev/critical_analyzer/data/Presentation"
+  - "/home/joon/dev/critical_analyzer/data/Proposal"
+final_prompt_path: "prompts/document_integration.txt"
+feedback_prompt_path: "prompts/feedback.txt"
+individual_summary_prompt: "prompts/individual_summary.txt"
