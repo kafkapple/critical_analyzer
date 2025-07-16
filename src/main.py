@@ -2,6 +2,7 @@
 import hydra
 from omegaconf import DictConfig
 import os
+import subprocess
 from tqdm import tqdm
 from file_handler import FileHandler
 from llm_adapter import LLMAdapter
@@ -28,8 +29,10 @@ def main(cfg: DictConfig) -> None:
         max_tokens=cfg.llm.max_tokens
     )
 
-    # Load prompts
-    individual_prompt_template = open(get_full_path(cfg.mode.individual_summary_prompt), 'r', encoding='utf-8').read()
+    # Load prompts (only for summary and integration modes)
+    individual_prompt_template = ""
+    if cfg.mode.analysis_mode in ["summary", "integration"] and hasattr(cfg.mode, 'individual_summary_prompt'):
+        individual_prompt_template = open(get_full_path(cfg.mode.individual_summary_prompt), 'r', encoding='utf-8').read()
     
     final_analysis_prompt_template = ""
     integration_analysis_prompt_template = ""
@@ -40,14 +43,112 @@ def main(cfg: DictConfig) -> None:
         integration_report_prompt_template = open(get_full_path(cfg.mode.integration_report_prompt_path), 'r', encoding='utf-8').read()
     if cfg.mode.analysis_mode == "summary":
         report_type_suffix = "_summary"
-        final_analysis_prompt_template = open(get_full_path(cfg.prompt.comprehensive_analysis_prompt), 'r', encoding='utf-8').read()
+        final_analysis_prompt_template = open(get_full_path(cfg.mode.final_prompt_path), 'r', encoding='utf-8').read()
     elif cfg.mode.analysis_mode == "integration":
         report_type_suffix = "_integrated"
         final_analysis_prompt_template = open(get_full_path(cfg.mode.final_prompt_path), 'r', encoding='utf-8').read()
+    elif cfg.mode.analysis_mode == "report":
+        report_type_suffix = "_report"
+        # Report 모드는 개별 프롬프트 템플릿을 사용
+        student_prompt_template = open(get_full_path(cfg.mode.student_prompt_path), 'r', encoding='utf-8').read()
+        teacher_prompt_template = open(get_full_path(cfg.mode.teacher_prompt_path), 'r', encoding='utf-8').read()
     else:
-        raise ValueError("Invalid analysis_mode specified in config. Must be 'summary' or 'integration'.")
+        raise ValueError("Invalid analysis_mode specified in config. Must be 'summary', 'integration', or 'report'.")
 
-    # Process each input directory
+    # --- Report 모드 처리 ---
+    if cfg.mode.analysis_mode == "report":
+        print("\n--- Processing Report Mode ---")
+        
+        # Report 모드 전용 처리 로직
+        import re
+        import glob
+        
+        # 각 입력 디렉토리 처리
+        for input_dir_path in cfg.mode.input_dirs:
+            input_dir = get_full_path(input_dir_path)
+            print(f"\n--- Processing directory: {input_dir} ---")
+            
+            # 폴더 패턴에 맞는 하위 폴더 찾기
+            folder_pattern = re.compile(cfg.mode.file_patterns.folder_pattern)
+            
+            for folder_name in os.listdir(input_dir):
+                folder_path = os.path.join(input_dir, folder_name)
+                if not os.path.isdir(folder_path):
+                    continue
+                    
+                # 폴더명 패턴 매칭
+                match = folder_pattern.match(folder_name)
+                if not match:
+                    continue
+                    
+                student_name = match.group(1)  # 이름 부분
+                student_id = match.group(2)    # 8자리 ID
+                
+                print(f"Processing: {student_name} (ID: {student_id})")
+                
+                # chats_*.txt 파일 찾기
+                chat_files = glob.glob(os.path.join(folder_path, cfg.mode.file_patterns.chat_file_pattern))
+                
+                if not chat_files:
+                    print(f"  No chat files found in {folder_path}")
+                    continue
+                
+                # 모든 chat 파일 내용 연결
+                concatenated_content = ""
+                for chat_file in sorted(chat_files):
+                    with open(chat_file, 'r', encoding='utf-8') as f:
+                        concatenated_content += f.read() + "\n\n"
+                
+                # 학생용 및 교사용 리포트 생성
+                for report_type in cfg.mode.report_types:
+                    print(f"  Generating {report_type} report...")
+                    
+                    # 프롬프트 선택
+                    if report_type == "student":
+                        prompt_template = student_prompt_template
+                    elif report_type == "teacher":
+                        prompt_template = teacher_prompt_template
+                    else:
+                        continue
+                    
+                    # 프롬프트에 대화 내용 삽입
+                    final_prompt = prompt_template.format(query=concatenated_content)
+                    
+                    # LLM 호출
+                    with tqdm(total=1, desc=f"Generating {report_type} report") as pbar:
+                        report_content = llm_adapter.generate(final_prompt)
+                        pbar.update(1)
+                    
+                    # 출력 디렉토리 생성
+                    output_dir = os.path.join(get_full_path(cfg.mode.output_base_dir), report_type)
+                    os.makedirs(output_dir, exist_ok=True)
+                    
+                    # 파일 저장 (MD)
+                    output_filename = f"{student_name}.md"
+                    output_path = os.path.join(output_dir, output_filename)
+                    
+                    with open(output_path, 'w', encoding='utf-8') as f:
+                        f.write(report_content)
+                    
+                    print(f"  {report_type.title()} report saved to: {output_path}")
+                    
+                    # PDF 출력 (설정에서 활성화된 경우)
+                    if hasattr(cfg.mode, 'output_formats') and 'pdf' in cfg.mode.output_formats:
+                        try:
+                            from pdf_generator import markdown_to_pdf
+                            pdf_output_path = output_path.replace('.md', '.pdf')
+                            pdf_result = markdown_to_pdf(output_path, pdf_output_path)
+                            if pdf_result:
+                                print(f"  {report_type.title()} PDF saved to: {pdf_output_path}")
+                        except Exception as e:
+                            print(f"  ⚠️ PDF 생성 실패: {e}")
+                
+                print(f"  Completed processing: {student_name}")
+
+        print("\n--- Report Mode Processing Complete ---")
+        return  # Exit early for report mode
+
+    # Process each input directory (for summary and integration modes)
     for input_dir_path in cfg.mode.input_dirs:
         input_dir = get_full_path(input_dir_path)
         print(f"\n--- Processing directory: {input_dir} ---")
@@ -253,8 +354,16 @@ def main(cfg: DictConfig) -> None:
                 f"--feedback_prompt_file \"{get_full_path(cfg.mode.feedback_prompt_path)}\" "
                 f"--output_file \"{feedback_output_path}\""
             )
-            os.system(feedback_command)
-            print(f"Feedback saved to: {feedback_output_path}")
+            
+            try:
+                result = subprocess.run(feedback_command, shell=True, capture_output=True, text=True)
+                if result.returncode == 0:
+                    print(f"Feedback generated successfully: {feedback_output_path}")
+                else:
+                    print(f"Error generating feedback: {result.stderr}")
+            except Exception as e:
+                print(f"Error running feedback generator: {e}")
+
 
 if __name__ == "__main__":
     main()

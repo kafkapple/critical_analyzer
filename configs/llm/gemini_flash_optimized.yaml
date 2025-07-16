@@ -1,0 +1,4 @@
+# configs/llm/gemini_flash_optimized.yaml
+model_name: "gemini/gemini-2.5-flash"
+temperature: 0.2  # 더 일관된 출력
+max_tokens: 8192  # 안전한 토큰 제한

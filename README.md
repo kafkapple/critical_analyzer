@@ -123,3 +123,105 @@ python src/main.py mode=summary llm=perplexity_sonar
 - **`summaries/`**: 각 문서에 대한 개별 분석 보고서가 저장되는 폴더입니다. 원본 파일명에 `_summary.md`가 붙은 형태로 저장됩니다.
 - **최종 보고서**: `[날짜]_[LLM모델명]_[입력폴더명]_[모드명]_[숫자].md` 형식으로 저장됩니다. (예: `250716_gemini_gemini-2.5-flash_Presentation_integrated_1.md`)
 - **피드백 보고서**: 최종 보고서 파일명 뒤에 `_feedback.md`가 붙은 형태로 저장됩니다.
+
+
+
+## 6. Report Mode - 학생-AI 튜터 대화 분석 시스템
+
+### 6.1. 개요
+Critical Analyzer는 학생과 AI 튜터 간의 대화 데이터를 분석하여 학생용 격려 보고서와 교사용 학습 분석 보고서를 자동 생성하는 Report Mode를 제공합니다.
+
+### 6.2. 기능
+- **학생 보고서**: 긍정적 피드백과 격려 중심의 개인별 보고서
+- **교사 보고서**: 학습 패턴 분석과 교육적 권장사항이 포함된 전문 보고서
+- **다중 형식 출력**: 마크다운, HTML, PDF 형식으로 동시 생성
+- **수식 지원**: MathJax를 통한 LaTeX 수식 완벽 렌더링
+- **배치 처리**: 대용량 데이터 자동 처리 및 진행 상황 모니터링
+
+### 6.3. 실행 방법
+```bash
+# Report Mode 실행
+python src/main.py mode=report
+
+# 배치 처리 상태 확인
+python batch_status.py
+
+# 빠른 상태 확인
+python quick_status.py
+
+# 연속 모니터링 (10초마다 업데이트)
+python batch_status.py --monitor
+```
+
+### 6.4. 출력 구조
+```
+outputs/reports/
+├── student/                    # 학생용 보고서
+│   ├── 학생_20101.md
+│   ├── 학생_20101.html
+│   ├── 학생_20101.pdf
+│   └── ...
+└── teacher/                    # 교사용 보고서
+    ├── 학생_20101.md
+    ├── 학생_20101.html
+    ├── 학생_20101.pdf
+    └── ...
+```
+
+### 6.5. 배치 처리 모니터링
+Report Mode는 대용량 데이터를 효율적으로 처리하기 위한 다양한 모니터링 도구를 제공합니다:
+
+#### 빠른 상태 확인
+```bash
+python quick_status.py
+```
+
+#### 상세 모니터링
+```bash
+python batch_status.py
+```
+
+#### 연속 모니터링
+```bash
+python batch_status.py --monitor
+```
+
+#### 수동 명령어들
+```bash
+# 진행률 계산
+echo "scale=1; $(find outputs/reports -name '*.md' | wc -l) / 2 / 41 * 100" | bc
+
+# 현재 처리 중인 학생 확인
+tail -20 logs/batch_report_*.log | grep "Processing:"
+
+# 실시간 로그 확인
+tail -f logs/batch_report_*.log
+
+# 완료된 파일 수 확인
+find outputs/reports -name "*.md" | wc -l
+```
+
+### 6.6. PDF 생성
+HTML 파일에서 PDF로 변환하는 방법:
+1. 브라우저에서 HTML 파일 열기
+2. Ctrl+P (또는 Cmd+P) 누르기
+3. 대상을 "PDF로 저장" 선택
+4. 여백을 "최소"로 설정
+5. 배경 그래픽 인쇄 활성화
+6. 저장 클릭
+
+또는 자동 PDF 생성:
+```bash
+python src/pdf_generator.py
+```
+
+## 7. 시스템 요구사항
+
+### 7.1. 의존성 설치
+```bash
+# 기본 의존성
+pip install -r requirements.txt
+
+# PDF 생성을 위한 추가 도구 (선택사항)
+sudo apt-get install pandoc texlive-xetex texlive-fonts-recommended
+```

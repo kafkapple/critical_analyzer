@@ -1,6 +1,6 @@
 defaults:
-  - llm: gemini_flash #openai_4o #gemini_pro #perplexity_sonar perplexity_sonar #
-  - mode: integration_v6 # Default mode is integration
+  - llm: gemini_pro #gemini_flash_optimized #openai_4o #gemini_pro #perplexity_sonar perplexity_sonar #
+  - mode: report #integration_v6 #summary_v2 # Default mode is integration
   - _self_
 
 base_output_dir: "/home/joon/dev/critical_analyzer/outputs"

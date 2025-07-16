@@ -1,0 +1,27 @@
+feat: Implement two-step integration, fix Mermaid diagram, and sort files
+
+   3 - Implemented a two-step integration process to handle long contexts:
+   4   - Step 1: Generate integration analysis summary using `integration_analysis_v4.txt`.
+   5   - Step 2: Generate final report based on the analysis summary using
+     `integration_report_v4.txt`.
+   6 - Added `two_step_integration` option and new prompt paths to `configs/mode/integration.yaml`.
+   7 - Modified `src/main.py` to support the new two-step integration logic and fixed a syntax
+     error.
+   8 - Fixed Mermaid diagram syntax in `prompts/integration/individual_summary_for_integration.txt`
+     to resolve parsing errors.
+   9 - Ensured file processing order by sorting files alphabetically/numerically in
+     `src/file_handler.py`.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   configs/llm/gemini_flash.yaml
+#	modified:   configs/mode/integration.yaml
+#	deleted:    prompts/comprehensive_analysis copy.txt
+#	deleted:    prompts/individual_summary copy.txt
+#	modified:   src/file_handler.py
+#	modified:   src/main.py
+#

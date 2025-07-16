@@ -1,0 +1,336 @@
+Starting the analysis process...
+[2025-07-16 21:48:16,247][root][WARNING] - Unknown model gemini/gemini-2.5-pro, using default context limit of 8192
+
+--- Processing Report Mode ---
+
+--- Processing directory: /home/joon/dev/critical_analyzer/data/conversation_math/ ---
+Processing: 학생_20114 (ID: 8d5d8270)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:33<00:00, 33.05s/it]Generating student report: 100%|██████████| 1/1 [00:33<00:00, 33.05s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20114.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:53<00:00, 53.74s/it]Generating teacher report: 100%|██████████| 1/1 [00:53<00:00, 53.74s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20114.md
+  Completed processing: 학생_20114
+Processing: 김서현 (ID: a143b0e0)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:27<00:00, 27.95s/it]Generating student report: 100%|██████████| 1/1 [00:27<00:00, 27.95s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/김서현.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:03<00:00, 63.39s/it]Generating teacher report: 100%|██████████| 1/1 [01:03<00:00, 63.39s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/김서현.md
+  Completed processing: 김서현
+Processing: 학생_20415 (ID: a1d56e86)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:34<00:00, 34.06s/it]Generating student report: 100%|██████████| 1/1 [00:34<00:00, 34.06s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20415.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.50s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.50s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20415.md
+  Completed processing: 학생_20415
+Processing: 학생_20419 (ID: b321575d)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:40<00:00, 40.54s/it]Generating student report: 100%|██████████| 1/1 [00:40<00:00, 40.55s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20419.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:02<00:00, 62.95s/it]Generating teacher report: 100%|██████████| 1/1 [01:02<00:00, 62.95s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20419.md
+  Completed processing: 학생_20419
+Processing: 학생_20121 (ID: 98a08c2d)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:34<00:00, 34.83s/it]Generating student report: 100%|██████████| 1/1 [00:34<00:00, 34.83s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20121.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.45s/it]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.45s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20121.md
+  Completed processing: 학생_20121
+Processing: 학생_20103 (ID: 2d97f2b2)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:38<00:00, 38.29s/it]Generating student report: 100%|██████████| 1/1 [00:38<00:00, 38.29s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20103.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.47s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.47s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20103.md
+  Completed processing: 학생_20103
+Processing: 학생_20104 (ID: dbe7e978)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:50<00:00, 50.08s/it]Generating student report: 100%|██████████| 1/1 [00:50<00:00, 50.08s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20104.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:07<00:00, 67.16s/it]Generating teacher report: 100%|██████████| 1/1 [01:07<00:00, 67.16s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20104.md
+  Completed processing: 학생_20104
+Processing: 학생_20107 (ID: 7dc7bb36)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:46<00:00, 46.99s/it]Generating student report: 100%|██████████| 1/1 [00:46<00:00, 46.99s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20107.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.07s/it]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.07s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20107.md
+  Completed processing: 학생_20107
+Processing: 학생_20408 (ID: 112f7ed0)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:26<00:00, 26.12s/it]Generating student report: 100%|██████████| 1/1 [00:26<00:00, 26.12s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20408.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.08s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.09s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20408.md
+  Completed processing: 학생_20408
+Processing: 학생_20113 (ID: 137b769d)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:31<00:00, 31.57s/it]Generating student report: 100%|██████████| 1/1 [00:31<00:00, 31.57s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20113.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:03<00:00, 63.21s/it]Generating teacher report: 100%|██████████| 1/1 [01:03<00:00, 63.21s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20113.md
+  Completed processing: 학생_20113
+Processing: 학생_20413 (ID: 6dc3526c)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.45s/it]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.45s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20413.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:51<00:00, 51.23s/it]Generating teacher report: 100%|██████████| 1/1 [00:51<00:00, 51.23s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20413.md
+  Completed processing: 학생_20413
+Processing: 학생_20105 (ID: cac97366)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:31<00:00, 31.02s/it]Generating student report: 100%|██████████| 1/1 [00:31<00:00, 31.02s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20105.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.27s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.28s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20105.md
+  Completed processing: 학생_20105
+Processing: 학생_20407 (ID: bc971951)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:33<00:00, 33.20s/it]Generating student report: 100%|██████████| 1/1 [00:33<00:00, 33.20s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20407.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:02<00:00, 62.14s/it]Generating teacher report: 100%|██████████| 1/1 [01:02<00:00, 62.14s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20407.md
+  Completed processing: 학생_20407
+Processing: 학생_20128 (ID: 01bffd6d)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:31<00:00, 31.53s/it]Generating student report: 100%|██████████| 1/1 [00:31<00:00, 31.53s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20128.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:51<00:00, 51.31s/it]Generating teacher report: 100%|██████████| 1/1 [00:51<00:00, 51.31s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20128.md
+  Completed processing: 학생_20128
+Processing: 김유수 (ID: b088e3c4)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.61s/it]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.61s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/김유수.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:04<00:00, 64.14s/it]Generating teacher report: 100%|██████████| 1/1 [01:04<00:00, 64.14s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/김유수.md
+  Completed processing: 김유수
+Processing: 학생_20118 (ID: cc0feb8c)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 37.80s/it]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 37.80s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20118.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:56<00:00, 56.55s/it]Generating teacher report: 100%|██████████| 1/1 [00:56<00:00, 56.55s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20118.md
+  Completed processing: 학생_20118
+Processing: 학생_20115 (ID: b1181684)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:47<00:00, 47.52s/it]Generating student report: 100%|██████████| 1/1 [00:47<00:00, 47.52s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20115.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:55<00:00, 55.59s/it]Generating teacher report: 100%|██████████| 1/1 [00:55<00:00, 55.59s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20115.md
+  Completed processing: 학생_20115
+Processing: 학생_20116 (ID: e78294b2)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.16s/it]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.16s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20116.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:00<00:00, 60.47s/it]Generating teacher report: 100%|██████████| 1/1 [01:00<00:00, 60.47s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20116.md
+  Completed processing: 학생_20116
+Processing: 학생_20117 (ID: aaf31e4a)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:36<00:00, 36.11s/it]Generating student report: 100%|██████████| 1/1 [00:36<00:00, 36.11s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20117.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.71s/it]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.72s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20117.md
+  Completed processing: 학생_20117
+Processing: 학생_20424 (ID: b9576019)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 38.00s/it]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 38.00s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20424.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.30s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.30s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20424.md
+  Completed processing: 학생_20424
+Processing: 학생_20423 (ID: 73f88dd2)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.11s/it]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.11s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20423.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.04s/it]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.04s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20423.md
+  Completed processing: 학생_20423
+Processing: 학생_20404 (ID: ff05d086)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:42<00:00, 42.33s/it]Generating student report: 100%|██████████| 1/1 [00:42<00:00, 42.33s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20404.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:08<00:00, 68.64s/it]Generating teacher report: 100%|██████████| 1/1 [01:08<00:00, 68.64s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20404.md
+  Completed processing: 학생_20404
+Processing: 학생_20102 (ID: a32a7b04)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [01:01<00:00, 61.55s/it]Generating student report: 100%|██████████| 1/1 [01:01<00:00, 61.55s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20102.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.81s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.81s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20102.md
+  Completed processing: 학생_20102
+Processing: 학생_20422 (ID: 30c53948)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.35s/it]Generating student report: 100%|██████████| 1/1 [00:39<00:00, 39.35s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20422.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.19s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.20s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20422.md
+  Completed processing: 학생_20422
+Processing: 학생_20401 (ID: 248ffa7f)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:36<00:00, 36.82s/it]Generating student report: 100%|██████████| 1/1 [00:36<00:00, 36.83s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20401.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:53<00:00, 53.41s/it]Generating teacher report: 100%|██████████| 1/1 [00:53<00:00, 53.41s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20401.md
+  Completed processing: 학생_20401
+Processing: 학생_20126 (ID: 4fe66f79)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:24<00:00, 24.32s/it]Generating student report: 100%|██████████| 1/1 [00:24<00:00, 24.32s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20126.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.47s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.47s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20126.md
+  Completed processing: 학생_20126
+Processing: 학생_20402 (ID: ab3dc324)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:32<00:00, 32.98s/it]Generating student report: 100%|██████████| 1/1 [00:32<00:00, 32.98s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20402.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:04<00:00, 64.60s/it]Generating teacher report: 100%|██████████| 1/1 [01:04<00:00, 64.60s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20402.md
+  Completed processing: 학생_20402
+Processing: 학생_20101 (ID: 5048fd4a)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:38<00:00, 38.47s/it]Generating student report: 100%|██████████| 1/1 [00:38<00:00, 38.48s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20101.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.24s/it]Generating teacher report: 100%|██████████| 1/1 [00:58<00:00, 58.25s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20101.md
+  Completed processing: 학생_20101
+Processing: 학생_20417 (ID: ce060d6d)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.09s/it]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.10s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20417.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.83s/it]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.83s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20417.md
+  Completed processing: 학생_20417
+Processing: 학생_20108 (ID: 5f1f036c)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.78s/it]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.78s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20108.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:59<00:00, 59.29s/it]Generating teacher report: 100%|██████████| 1/1 [00:59<00:00, 59.30s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20108.md
+  Completed processing: 학생_20108
+Processing: 학생_20109 (ID: 331c531c)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 37.19s/it]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 37.19s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20109.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:55<00:00, 55.86s/it]Generating teacher report: 100%|██████████| 1/1 [00:55<00:00, 55.86s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20109.md
+  Completed processing: 학생_20109
+Processing: 학생_20111 (ID: 26794a9b)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.41s/it]Generating student report: 100%|██████████| 1/1 [00:43<00:00, 43.41s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20111.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.68s/it]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.69s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20111.md
+  Completed processing: 학생_20111
+Processing: 학생_20110 (ID: c7aa55bb)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:32<00:00, 32.72s/it]Generating student report: 100%|██████████| 1/1 [00:32<00:00, 32.73s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20110.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:16<00:00, 76.82s/it]Generating teacher report: 100%|██████████| 1/1 [01:16<00:00, 76.82s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20110.md
+  Completed processing: 학생_20110
+Processing: 학생_20421 (ID: d5fe656c)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:34<00:00, 34.60s/it]Generating student report: 100%|██████████| 1/1 [00:34<00:00, 34.60s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20421.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:56<00:00, 56.68s/it]Generating teacher report: 100%|██████████| 1/1 [00:56<00:00, 56.69s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20421.md
+  Completed processing: 학생_20421
+Processing: 학생_20412 (ID: 6d46fd5b)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:38<00:00, 38.03s/it]Generating student report: 100%|██████████| 1/1 [00:38<00:00, 38.03s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20412.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.72s/it]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.73s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20412.md
+  Completed processing: 학생_20412
+Processing: 학생_20405 (ID: 2612b4d6)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:33<00:00, 33.97s/it]Generating student report: 100%|██████████| 1/1 [00:33<00:00, 33.97s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20405.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:00<00:00, 60.82s/it]Generating teacher report: 100%|██████████| 1/1 [01:00<00:00, 60.83s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20405.md
+  Completed processing: 학생_20405
+Processing: 학생_20119 (ID: 15a07165)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [01:08<00:00, 68.12s/it]Generating student report: 100%|██████████| 1/1 [01:08<00:00, 68.13s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20119.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:02<00:00, 62.69s/it]Generating teacher report: 100%|██████████| 1/1 [01:02<00:00, 62.70s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20119.md
+  Completed processing: 학생_20119
+Processing: 학생_20411 (ID: 78215cf1)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:55<00:00, 55.59s/it]Generating student report: 100%|██████████| 1/1 [00:55<00:00, 55.59s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20411.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:03<00:00, 63.20s/it]Generating teacher report: 100%|██████████| 1/1 [01:03<00:00, 63.20s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20411.md
+  Completed processing: 학생_20411
+Processing: 박은경 (ID: 721e107a)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:40<00:00, 40.44s/it]Generating student report: 100%|██████████| 1/1 [00:40<00:00, 40.44s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/박은경.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:59<00:00, 59.49s/it]Generating teacher report: 100%|██████████| 1/1 [00:59<00:00, 59.50s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/박은경.md
+  Completed processing: 박은경
+Processing: 학생_20420 (ID: 8cea219b)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 37.68s/it]Generating student report: 100%|██████████| 1/1 [00:37<00:00, 37.69s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20420.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.56s/it]Generating teacher report: 100%|██████████| 1/1 [00:57<00:00, 57.56s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20420.md
+  Completed processing: 학생_20420
+Processing: 학생_20425 (ID: 5d88e9ca)
+  Generating student report...
+Generating student report:   0%|          | 0/1 [00:00<?, ?it/s]Generating student report: 100%|██████████| 1/1 [00:40<00:00, 40.43s/it]Generating student report: 100%|██████████| 1/1 [00:40<00:00, 40.43s/it]
+  Student report saved to: /home/joon/dev/critical_analyzer/outputs/reports/student/학생_20425.md
+  Generating teacher report...
+Generating teacher report:   0%|          | 0/1 [00:00<?, ?it/s]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.02s/it]Generating teacher report: 100%|██████████| 1/1 [01:01<00:00, 61.03s/it]
+  Teacher report saved to: /home/joon/dev/critical_analyzer/outputs/reports/teacher/학생_20425.md
+  Completed processing: 학생_20425
+
+--- Report Mode Processing Complete ---

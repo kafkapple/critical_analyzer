@@ -1,6 +1,7 @@
 analysis_mode: "summary"
 input_dirs:
-  - "/home/joon/dev/critical_analyzer/sample_docs"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research/250709_input/"
+
 final_prompt_path: "prompts/summary/comprehensive_analysis.txt"
 feedback_prompt_path: "prompts/feedback.txt"
 individual_summary_prompt: "prompts/summary/individual_summary.txt"

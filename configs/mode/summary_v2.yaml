@@ -1,0 +1,16 @@
+analysis_mode: "summary"
+input_dirs:
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/My_Research/250709_input/"
+
+# V2 특징: 개별 문서 요약 섹션이 포함된 종합 분석 + 최적화된 compact 프롬프트
+final_prompt_path: "prompts/summary/comprehensive_analysis_v2.txt"
+feedback_prompt_path: "prompts/feedback.txt"
+individual_summary_prompt: "prompts/summary/individual_summary_compact.txt"
+
+# 버전 정보
+version: "2.0"
+description: "토큰 제한 대응 및 개별 문서 요약 최적화 버전"
+optimizations:
+  - "Compact 개별 요약 프롬프트 (45줄)"
+  - "개별 문서 요약 섹션 포함된 종합 분석"
+  - "토큰 효율성 극대화"
