@@ -32,6 +32,12 @@ def main(cfg: DictConfig) -> None:
     individual_prompt_template = open(get_full_path(cfg.mode.individual_summary_prompt), 'r', encoding='utf-8').read()
     
     final_analysis_prompt_template = ""
+    integration_analysis_prompt_template = ""
+    integration_report_prompt_template = ""
+
+    if cfg.mode.analysis_mode == "integration" and hasattr(cfg.mode, 'two_step_integration') and cfg.mode.two_step_integration:
+        integration_analysis_prompt_template = open(get_full_path(cfg.mode.integration_analysis_prompt_path), 'r', encoding='utf-8').read()
+        integration_report_prompt_template = open(get_full_path(cfg.mode.integration_report_prompt_path), 'r', encoding='utf-8').read() ""
     if cfg.mode.analysis_mode == "summary":
         report_type_suffix = "_summary"
         final_analysis_prompt_template = open(get_full_path(cfg.prompt.comprehensive_analysis_prompt), 'r', encoding='utf-8').read()
@@ -125,20 +131,42 @@ def main(cfg: DictConfig) -> None:
                 with open(filepath, 'r', encoding='utf-8') as f:
                     summary_text = f.read()
                 concatenated_input += f"--- DOCUMENT: {filename} ---\n\n{summary_text}\n\n"
+            
+            final_prompt = final_analysis_prompt_template.format(documents_concatenated=concatenated_input)
+            final_report_content = ""
+            with tqdm(total=1, desc="Creating final report") as pbar:
+                final_report_content = llm_adapter.generate(final_prompt)
+                pbar.update(1)
+
         elif cfg.mode.analysis_mode == "integration":
             print("\n--- Integrating and Optimizing Documents ---")
             # Concatenate all original documents for integration
-            concatenated_input = ""
+            concatenated_original_documents = ""
             for doc in documents: # Use original documents, not summaries
                 filename = os.path.basename(doc['filename'])
-                concatenated_input += f"--- DOCUMENT: {filename} ---\n\n{doc['content']}\n\n"
+                concatenated_original_documents += f"--- DOCUMENT: {filename} ---\n\n{doc['content']}\n\n"
 
-        final_prompt = final_analysis_prompt_template.format(documents_concatenated=concatenated_input)
-        
-        final_report_content = ""
-        with tqdm(total=1, desc="Creating final report") as pbar:
-            final_report_content = llm_adapter.generate(final_prompt)
-            pbar.update(1)
+            if hasattr(cfg.mode, 'two_step_integration') and cfg.mode.two_step_integration:
+                print("\n--- Step 1: Generating Integration Analysis Summary ---")
+                analysis_prompt = integration_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
+                integration_analysis_summary = ""
+                with tqdm(total=1, desc="Generating analysis summary") as pbar:
+                    integration_analysis_summary = llm_adapter.generate(analysis_prompt)
+                    pbar.update(1)
+                
+                print("\n--- Step 2: Generating Final Integration Report ---")
+                report_prompt = integration_report_prompt_template.format(integration_analysis_summary=integration_analysis_summary)
+                final_report_content = ""
+                with tqdm(total=1, desc="Creating final report") as pbar:
+                    final_report_content = llm_adapter.generate(report_prompt)
+                    pbar.update(1)
+            else:
+                # Existing single-step integration logic
+                final_prompt = final_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
+                final_report_content = ""
+                with tqdm(total=1, desc="Creating final report") as pbar:
+                    final_report_content = llm_adapter.generate(final_prompt)
+                    pbar.update(1)
 
         # --- 5. Write Final Report ---
         with open(final_report_path, 'w', encoding='utf-8') as f:
