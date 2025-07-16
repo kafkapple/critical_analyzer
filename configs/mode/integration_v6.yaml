@@ -1,0 +1,15 @@
+analysis_mode: "integration"
+input_dirs:
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Background"
+ # - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Presentation"  
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Proposal"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Future"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Critics"
+
+# v6 시스템 - 스마트 토큰 관리 및 동적 전략 선택
+final_prompt_path: "prompts/integration/integration_v3.txt"
+two_step_integration: true
+integration_analysis_prompt_path: "prompts/integration/integration_analysis_v6.txt"
+integration_report_prompt_path: "prompts/integration/integration_report_v6.txt"
+feedback_prompt_path: "prompts/feedback.txt"
+individual_summary_prompt: "prompts/integration/individual_summary_for_integration.txt"

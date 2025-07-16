@@ -146,25 +146,93 @@ def main(cfg: DictConfig) -> None:
                 filename = os.path.basename(doc['filename'])
                 concatenated_original_documents += f"--- DOCUMENT: {filename} ---\n\n{doc['content']}\n\n"
 
-            if hasattr(cfg.mode, 'two_step_integration') and cfg.mode.two_step_integration:
-                print("\n--- Step 1: Generating Integration Analysis Summary ---")
-                analysis_prompt = integration_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
-                integration_analysis_summary = ""
-                with tqdm(total=1, desc="Generating analysis summary") as pbar:
-                    integration_analysis_summary = llm_adapter.generate(analysis_prompt)
-                    pbar.update(1)
-                
-                print("\n--- Step 2: Generating Final Integration Report ---")
-                report_prompt = integration_report_prompt_template.format(integration_analysis_summary=integration_analysis_summary)
+            # Smart token strategy analysis
+            print("\n🔍 Analyzing content and determining optimal strategy...")
+            strategy_info = llm_adapter.analyze_token_strategy(concatenated_original_documents)
+            
+            # Display strategy information
+            print(f"📊 Token Analysis:")
+            print(f"  ├─ Content tokens: {strategy_info['token_count']:,}")
+            print(f"  ├─ Model context limit: {strategy_info['model_context_limit']:,}")
+            print(f"  ├─ Direct integration threshold: {strategy_info['direct_threshold']:,}")
+            print(f"  ├─ Two-step threshold: {strategy_info['two_step_threshold']:,}")
+            print(f"  ├─ Recommended strategy: {strategy_info['strategy'].upper()}")
+            print(f"  ├─ Risk level: {strategy_info['risk_level'].upper()}")
+            print(f"  └─ Reason: {strategy_info['reason']}")
+            
+            # Log strategy information
+            logging.info(f"Token strategy analysis: {strategy_info}")
+
+            # Execute based on strategy
+            if strategy_info['strategy'] == 'direct':
+                print(f"\n⚡ Executing DIRECT integration (single-step)...")
+                final_prompt = integration_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
                 final_report_content = ""
-                with tqdm(total=1, desc="Creating final report") as pbar:
-                    final_report_content = llm_adapter.generate(report_prompt)
+                with tqdm(total=1, desc="Direct integration") as pbar:
+                    final_report_content = llm_adapter.generate(final_prompt)
                     pbar.update(1)
+            
+            elif strategy_info['strategy'] == 'two_step':
+                print(f"\n🔄 Executing TWO-STEP integration...")
+                
+                if hasattr(cfg.mode, 'two_step_integration') and cfg.mode.two_step_integration:
+                    print("--- Step 1: Generating Integration Analysis Summary ---")
+                    analysis_prompt = integration_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
+                    integration_analysis_summary = ""
+                    with tqdm(total=1, desc="Generating analysis summary") as pbar:
+                        integration_analysis_summary = llm_adapter.generate(analysis_prompt)
+                        pbar.update(1)
+                    
+                    print("--- Step 2: Generating Final Integration Report ---")
+                    report_prompt = integration_report_prompt_template.format(integration_analysis_summary=integration_analysis_summary)
+                    final_report_content = ""
+                    with tqdm(total=1, desc="Creating final report") as pbar:
+                        final_report_content = llm_adapter.generate(report_prompt)
+                        pbar.update(1)
+                else:
+                    # Fallback to single-step if two_step_integration not configured
+                    print("⚠️  Two-step integration not configured, falling back to single-step")
+                    final_prompt = final_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
+                    final_report_content = ""
+                    with tqdm(total=1, desc="Single-step fallback") as pbar:
+                        final_report_content = llm_adapter.generate(final_prompt)
+                        pbar.update(1)
+            
+            elif strategy_info['strategy'] == 'chunk':
+                print(f"\n⚠️  CHUNKING strategy detected - content exceeds safe limits")
+                print("📋 Consider:")
+                print("  ├─ Breaking documents into smaller sections")
+                print("  ├─ Using document summary mode instead")
+                print("  └─ Processing documents in batches")
+                
+                # For now, attempt two-step with warning
+                print("🔄 Attempting two-step integration with risk warning...")
+                logging.warning("Content exceeds safe limits - attempting two-step integration")
+                
+                if hasattr(cfg.mode, 'two_step_integration') and cfg.mode.two_step_integration:
+                    analysis_prompt = integration_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
+                    integration_analysis_summary = ""
+                    with tqdm(total=1, desc="High-risk analysis") as pbar:
+                        integration_analysis_summary = llm_adapter.generate(analysis_prompt)
+                        pbar.update(1)
+                    
+                    report_prompt = integration_report_prompt_template.format(integration_analysis_summary=integration_analysis_summary)
+                    final_report_content = ""
+                    with tqdm(total=1, desc="High-risk integration") as pbar:
+                        final_report_content = llm_adapter.generate(report_prompt)
+                        pbar.update(1)
+                else:
+                    final_prompt = final_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
+                    final_report_content = ""
+                    with tqdm(total=1, desc="High-risk single-step") as pbar:
+                        final_report_content = llm_adapter.generate(final_prompt)
+                        pbar.update(1)
+            
             else:
-                # Existing single-step integration logic
+                print(f"❌ Unknown strategy: {strategy_info['strategy']} - using fallback")
                 final_prompt = final_analysis_prompt_template.format(documents_concatenated=concatenated_original_documents)
                 final_report_content = ""
-                with tqdm(total=1, desc="Creating final report") as pbar:
+                with tqdm(total=1, desc="Fallback integration") as pbar:
                     final_report_content = llm_adapter.generate(final_prompt)
                     pbar.update(1)
 
