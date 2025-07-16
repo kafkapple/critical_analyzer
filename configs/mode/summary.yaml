@@ -1,6 +1,6 @@
 analysis_mode: "summary"
 input_dirs:
   - "/home/joon/dev/critical_analyzer/sample_docs"
-final_prompt_path: "prompts/comprehensive_analysis.txt"
+final_prompt_path: "prompts/summary/comprehensive_analysis.txt"
 feedback_prompt_path: "prompts/feedback.txt"
-individual_summary_prompt: "prompts/individual_summary.txt"
+individual_summary_prompt: "prompts/summary/individual_summary.txt"
