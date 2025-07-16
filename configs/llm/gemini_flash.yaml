@@ -1,5 +1,5 @@
 # configs/llm/gemini_1.5_flash.yaml
 model_name: "gemini/gemini-2.5-flash"
 temperature: 0.3
-max_tokens: 16000
+max_tokens: 30000
 

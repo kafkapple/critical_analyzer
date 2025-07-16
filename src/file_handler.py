@@ -13,7 +13,7 @@ class FileHandler:
         for root, dirs, files in os.walk(self.directory):
             # Exclude 'outputs' directories from being walked
             dirs[:] = [d for d in dirs if d != 'outputs']
-            for filename in files:
+            for filename in sorted(files):
                 if filename.endswith(".md"):
                     filepath = os.path.join(root, filename)
                     try:

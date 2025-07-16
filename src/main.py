@@ -37,7 +37,7 @@ def main(cfg: DictConfig) -> None:
 
     if cfg.mode.analysis_mode == "integration" and hasattr(cfg.mode, 'two_step_integration') and cfg.mode.two_step_integration:
         integration_analysis_prompt_template = open(get_full_path(cfg.mode.integration_analysis_prompt_path), 'r', encoding='utf-8').read()
-        integration_report_prompt_template = open(get_full_path(cfg.mode.integration_report_prompt_path), 'r', encoding='utf-8').read() ""
+        integration_report_prompt_template = open(get_full_path(cfg.mode.integration_report_prompt_path), 'r', encoding='utf-8').read()
     if cfg.mode.analysis_mode == "summary":
         report_type_suffix = "_summary"
         final_analysis_prompt_template = open(get_full_path(cfg.prompt.comprehensive_analysis_prompt), 'r', encoding='utf-8').read()

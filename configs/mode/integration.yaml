@@ -1,10 +1,10 @@
 analysis_mode: "integration"
 input_dirs:
-  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Critics"
-  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Presentation"
-  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/References"
-  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Proposal"
 
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Presentation"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Proposal"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/References"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Critics"
 
 final_prompt_path: "prompts/integration/integration_v3.txt" #document_integration.txt"
 two_step_integration: true
