@@ -29,7 +29,7 @@ def main(cfg: DictConfig) -> None:
     )
 
     # Load prompts
-    individual_prompt_template = open(get_full_path(cfg.prompt.individual_summary_prompt), 'r', encoding='utf-8').read()
+    individual_prompt_template = open(get_full_path(cfg.mode.individual_summary_prompt), 'r', encoding='utf-8').read()
     
     final_analysis_prompt_template = ""
     if cfg.mode.analysis_mode == "summary":

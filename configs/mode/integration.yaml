@@ -4,4 +4,4 @@ input_dirs:
   - "/home/joon/dev/critical_analyzer/data/Proposal"
 final_prompt_path: "prompts/document_integration.txt"
 feedback_prompt_path: "prompts/feedback.txt"
-individual_summary_prompt: "prompts/individual_summary.txt"
+individual_summary_prompt: "prompts/individual_summary_for_integration.txt"
