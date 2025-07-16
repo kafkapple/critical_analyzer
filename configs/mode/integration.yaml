@@ -1,7 +1,11 @@
 analysis_mode: "integration"
 input_dirs:
-  - "/home/joon/dev/critical_analyzer/data/Presentation"
-  - "/home/joon/dev/critical_analyzer/data/Proposal"
-final_prompt_path: "prompts/integration/document_integration.txt"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Critics"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Presentation"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/References"
+  - "/home/joon/Documents/Obsidian/30_Projects/2503_Portfolio_CV/AMILab/_target/Proposal"
+
+
+final_prompt_path: "prompts/integration/integration_v3.txt" #document_integration.txt"
 feedback_prompt_path: "prompts/feedback.txt"
 individual_summary_prompt: "prompts/integration/individual_summary_for_integration.txt"

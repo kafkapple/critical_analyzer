@@ -55,10 +55,9 @@ def main():
         #
         # **입력 2: 연구실 정보**
         # [연구실명, PI 정보, 주요 연구 분야, 보유 장비/자원, 연구 철학 등을 입력하세요]
-        formatted_prompt = feedback_prompt_template.replace(
-            "[여기에 검토할 연구 계획서 내용을 입력하세요]", report_content
-        ).replace(
-            "[연구실명, PI 정보, 주요 연구 분야, 보유 장비/자원, 연구 철학 등을 입력하세요]", pi_info_content
+        formatted_prompt = feedback_prompt_template.format(
+            document_info=report_content,
+            pi_lab_info=pi_info_content
         )
 
         # Generate feedback

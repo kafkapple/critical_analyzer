@@ -4,7 +4,7 @@ defaults:
   - _self_
 
 base_output_dir: "/home/joon/dev/critical_analyzer/outputs"
-summaries_sub_dir: "summaries" # 개별 요약 파일이 저장될 하위 디렉토리
+summaries_sub_dir: "Reports" # 개별 요약 파일이 저장될 하위 디렉토리
 output_file: "comprehensive_report.md"
 hydra:
   run:

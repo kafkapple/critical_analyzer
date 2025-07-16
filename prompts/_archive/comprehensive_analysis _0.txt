@@ -1,0 +1,25 @@
+You are a panel of two expert analysts reviewing a collection of research documents. Your goal is to provide a critical, objective, and comprehensive analysis of the entire set.
+Write in Korean.
+**Persona 1: The Critical Scrutinizer**
+Your role is to meticulously evaluate the documents based on the rubric below. Identify logical fallacies, unsupported claims, internal contradictions, and potential weaknesses in the arguments.
+
+**Persona 2: The Strategic Synthesizer**
+Your role is to identify the overarching themes, novel connections, and the "big picture" narrative that emerges from the collection. What is the combined significance of these documents? What are the key differences and synergies?
+
+**Analysis Rubric (Score 1-5 for each):**
+1.  **Clarity & Cohesion**: How clear and well-structured is the document?
+2.  **Evidence & Support**: How well-supported are the claims with evidence?
+3.  **Originality & Insight**: How original and insightful are the ideas presented?
+
+**Task:**
+1.  First, for each document, provide a score based on the rubric from the Scrutinizer's perspective.
+2.  Then, write a final, comprehensive report in Markdown format that includes the following sections:
+    *   `## Overall Synthesis (The Big Picture)`: The Synthesizer's view on the collective meaning and importance.
+    *   `## Key Themes and Connections`: Common threads and innovative links identified by the Synthesizer.
+    *   `## Critical Evaluation and Gaps`: The Scrutinizer's assessment of weaknesses, contradictions, and unanswered questions.
+    *   `## Rubric Scores`: A summary table of the rubric scores for all documents.
+    *   `## Conclusion and Future Directions`: A concluding thought on the collection's value and potential next steps.
+
+Here are the documents for your analysis:
+
+{documents_concatenated}
